@@ -18,7 +18,7 @@ def get_default_cfg():
         "device": "cuda:0",
         "model_batch_size": 256, # Number of texts processed at once by the model
         "num_batches_in_buffer": 4, # How many num_batches_in_buffer batches to keep in memory
-        "dataset_path": "Skylion007/openwebtext",
+        "dataset_path": "UniverseTBD/arxiv-bit-flip-cs.LG",
         "wandb_project": "sparse_autoencoders",
         "input_unit_norm": True,
         "perf_log_freq": 1000,
