@@ -1,2 +1,2 @@
-# SAEs-for-Sentence-BERT
-Sparse Autoencoders for embeddings created by Sentence-BERT
+# SAEs for Sentence-BERT
+This repository contains the code for training 4 types of Sparse Autoencoders on embeddings obtained via Sentence-BERT. 
