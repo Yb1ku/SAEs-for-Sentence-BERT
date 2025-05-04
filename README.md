@@ -4,6 +4,8 @@
 
 # Master's Thesis – A method for interpreting features in Sparse Autoencoders 
 
+> [View full documentation here](https://yb1ku.github.io/SAEs-for-Sentence-BERT/)
+
 This repository contains the code and resources used for the development of a method for interpreting mono-semantic features 
 in Sparse Autoencoders. The SAE will take an embedding created by `Sentence-BERT` and obtain mono-semantic features from a specific
 context (Machine Learning and Astrophysics). The novelty of this work is the use of a brand-new feature interpretation method 

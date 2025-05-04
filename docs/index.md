@@ -5,7 +5,7 @@ This codebase exists to provide a simple environment for :
 - Training Sparse Autoencoders (SAEs) on Sentence-BERT embeddings. 
 - Analyzing the features obtained from the SAEs. 
 
-### Quick start 
+## QUICK START 
 Install the requirements: 
 ```bash 
 pip install -r requirements.txt 
@@ -14,10 +14,6 @@ pip install -r requirements.txt
 The following snippet shows how to load a Sparse Autoencoder from a wandb project. 
 ```python 
 from config import get_default_cfg 
-import importlib
-import explainer
-import config
-import utils
 from explainer import Explainer
 
 cfg = get_default_cfg()
@@ -44,7 +40,7 @@ keywords = explainer.extract_keywords_per_feature(
 
 `top_activations` is a dictionary, each key corresponding to a feature. Inside each key, there is a list 
 of tuples of the form `[(activation), text]`. `activation` is the activation produced by the text to the 
-feature, and `text` is the text itself. For example, a possible output of `top_activations' could be: 
+feature, and `text` is the text itself. For example, a possible output of `top_activations` could be: 
 ```bash 
 [[2.9942984580993652,
   '  Trust region policy optimization (TRPO) is a popular and empirically\nsuccessful policy search 
