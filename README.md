@@ -5,13 +5,13 @@
 # Master's Thesis – A method for interpreting features in Sparse Autoencoders 
 
 This repository contains the code and resources used for the development of a method for interpreting mono-semantic features 
-in Sparse Autoencoders. The SAE will take an embedding created by Sentence-BERT and obtain mono-semantic features from a specific
+in Sparse Autoencoders. The SAE will take an embedding created by `Sentence-BERT` and obtain mono-semantic features from a specific
 context (Machine Learning and Astrophysics). The novelty of this work is the use of a brand new feature interpretation method 
-based on keyword extraction via KeyBERT. 
+based on keyword extraction via `KeyBERT`. 
 
 ## 📌 Objectives 
-- Train a JumpReLU Sparse Autoencoder on embeddings obtained from different specific datasets. 
-- Analyze the features obtained from the SAE and interpret them using a new method based on KeyBERT. 
+- Train a `JumpReLU` Sparse Autoencoder on embeddings obtained from different specific datasets. 
+- Analyze the features obtained from the SAE and interpret them using a new method based on `KeyBERT`. 
 
 
 ## 📁 Repository Structure
@@ -25,6 +25,7 @@ based on keyword extraction via KeyBERT.
   ├── 🐍 train_saes.py 
   ├── 🐍 activation_store.py 
   ├── 🐍 logs.py 
+  ├── 🐍 utils.py 
 
 ├── 📁 tutorials 
   ├── 🧪 sae_analysis.ipynb 

@@ -3,24 +3,24 @@ import wandb
 import importlib
 import utils
 importlib.reload(utils)
-from config import get_default_cfg
 from utils import wait_for_gpu_cooldown
 from datasets import load_dataset
 import matplotlib.pyplot as plt
-import json
 import os
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
-import random
-import subprocess
-import time
-from transformers import pipeline
 from sae import JumpReLUSAE
 import seaborn as sns
 import warnings
 from torch.utils.data import DataLoader
 import heapq
+from keybert import KeyBERT
+from sentence_transformers import util
+from collections import defaultdict
+from itertools import combinations
+from math import log
+import json
 
 
 
@@ -190,6 +190,129 @@ class Explainer:
 
         return top_activations
 
+    def extract_keywords_per_feature(self,
+            top_activations,
+            top_n_keywords=3,
+            similarity_threshold=0.9,
+            bigram_sim_threshold=0.4,
+            group_sim_threshold=0.8,
+            save_path=None
+    ):
+        """
+        Extract keywords from the top activating texts for each feature.
+        """
+        kw_model = KeyBERT()
+        embedding_model = self.model
+        results = []
+
+        for feature_id, heap in enumerate(top_activations):
+            keyword_sums = defaultdict(float)
+            keyword_counts = defaultdict(int)
+
+            for _, text in heap:
+                text_embedding = embedding_model.encode(text, convert_to_tensor=True)
+
+                keywords = kw_model.extract_keywords(text)
+                keywords = [(w.lower(), s) for w, s in keywords]
+                if not keywords:
+                    continue
+
+                words, _ = zip(*keywords)
+                embeddings = embedding_model.encode(words, convert_to_tensor=True)
+
+                grouped_indices = set()
+                local_groups = []
+                for i, (word_i, coef_i) in enumerate(keywords):
+                    if i in grouped_indices:
+                        continue
+                    group = [(word_i, coef_i)]
+                    grouped_indices.add(i)
+                    for j in range(i + 1, len(keywords)):
+                        if j in grouped_indices:
+                            continue
+                        sim = util.cos_sim(embeddings[i], embeddings[j]).item()
+                        if sim >= similarity_threshold:
+                            group.append((keywords[j][0], keywords[j][1]))
+                            grouped_indices.add(j)
+                    local_groups.append(group)
+
+                compact_keywords = []
+                for group in local_groups:
+                    representative, score = max(group, key=lambda x: x[1])
+                    compact_keywords.append((representative, score))
+
+                top_keywords = compact_keywords[:5]
+                top_words = [w for w, _ in top_keywords]
+                for w1, w2 in combinations(top_words, 2):
+                    phrase = f"{w1} {w2}"
+                    phrase_embedding = embedding_model.encode(phrase, convert_to_tensor=True)
+                    sim_to_text = util.cos_sim(phrase_embedding, text_embedding).item()
+                    if sim_to_text >= bigram_sim_threshold:
+                        compact_keywords.append((phrase, sim_to_text))
+
+                seen = set()
+                for word, coef in compact_keywords:
+                    keyword_sums[word] += coef
+                    if word not in seen:
+                        keyword_counts[word] += 1
+                        seen.add(word)
+
+            scored_keywords = {
+                word: (keyword_sums[word] / keyword_counts[word]) * log(1 + keyword_counts[word])
+                for word in keyword_sums
+            }
+            sorted_keywords = sorted(scored_keywords.items(), key=lambda x: x[1], reverse=True)
+            terms = [term for term, _ in sorted_keywords]
+
+            if terms:
+                term_embeddings = embedding_model.encode(terms, convert_to_tensor=True)
+            else:
+                term_embeddings = None
+
+            clustered = []
+            assigned = set()
+            for i, term in enumerate(terms):
+                if term in assigned:
+                    continue
+                cluster = [term]
+                assigned.add(term)
+                for j in range(i + 1, len(terms)):
+                    if terms[j] in assigned:
+                        continue
+                    sim = util.cos_sim(term_embeddings[i], term_embeddings[j]).item()
+                    if sim >= group_sim_threshold:
+                        cluster.append(terms[j])
+                        assigned.add(terms[j])
+                clustered.append(cluster)
+
+            aggregated_keywords = []
+            for cluster in clustered:
+                S = sum(keyword_sums[w] for w in cluster)
+                N = sum(keyword_counts[w] for w in cluster)
+                if N > 0:
+                    score = (S / N) * log(1 + N)
+                    rep = max(cluster, key=lambda w: scored_keywords.get(w, 0))
+                    aggregated_keywords.append((rep, score))
+
+            sorted_aggregated_keywords = sorted(aggregated_keywords, key=lambda x: x[1], reverse=True)
+            top_keywords_final = sorted_aggregated_keywords[:top_n_keywords]
+
+            results.append({
+                "feature_id": feature_id,
+                "keywords": top_keywords_final
+            })
+
+            if (feature_id + 1) % 500 == 0:
+                print(f"[INFO] Processed {feature_id + 1} features...")
+
+            wait_for_gpu_cooldown(threshold=73, cooldown=60)
+
+        if save_path:
+            with open(save_path, "w", encoding="utf-8") as f:
+                json.dump(results, f, indent=2, ensure_ascii=False)
+            print(f"[INFO] Keywords saved to {save_path}")
+
+        return results
 
 
 
