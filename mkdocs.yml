@@ -8,7 +8,7 @@ nav:
   - Introduction to the project: introduction.md
   - SAE models: saes.md
   - Activation Store: activationstore.md
-    Training: training.md
+  - Training: training.md
   - Feature analysis:
       - Keyword extraction: interpretability/keywords.md
       - Visualization: interpretability/visualization.md
