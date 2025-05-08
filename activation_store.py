@@ -1,28 +1,6 @@
 import torch
 from torch.utils.data import DataLoader, TensorDataset
-from transformer_lens.hook_points import HookedRootModule
 from datasets import load_dataset
-
-def normalize_hook_point(cfg: dict, model: HookedRootModule) -> str:
-    raw_hook = cfg["hook_point"]
-    layer = cfg.get("layer", None)
-
-    if raw_hook == "embed":
-        return "embed.hook_embed"
-
-    # Ya viene completo (ej: blocks.5.hook_q), no tocamos nada
-    if raw_hook in model.hook_dict:
-        return raw_hook
-
-    # Si empieza por blocks.X (pero sin hook), completamos por defecto
-    if raw_hook.startswith("blocks.") and raw_hook.count(".") == 1:
-        return raw_hook + ".hook_resid_post"
-
-    # Si es un nombre de hook parcial (como "hook_q") y hay layer, construimos el nombre completo
-    if layer is not None:
-        return f"blocks.{layer}.{raw_hook}"
-
-    raise ValueError(f"No se puede interpretar hook_point='{raw_hook}' con layer={layer}")
 
 
 class ActivationsStoreSBERT:
