@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../saes/">
       
       
-        <link rel="next" href="../saes/">
+        <link rel="next" href="../training/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Introduction to the project - SAEs for Sentence-BERT</title>
+        <title>Activation Store - SAEs for Sentence-BERT</title>
       
     
     
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#purpose" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction to the project
+              Activation Store
             
           </span>
         </div>
@@ -206,17 +211,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
@@ -227,7 +225,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -258,10 +255,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../activationstore/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Activation Store
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -272,6 +289,111 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Purpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuration Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Main Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Main Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_batch_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_batch_tokens()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_activationstexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_activations(texts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_fill_buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      _fill_buffer()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_get_dataloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      _get_dataloader()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      next_batch()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Lifecycle and Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -429,6 +551,101 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Purpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuration Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Main Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Main Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_batch_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_batch_tokens()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_activationstexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_activations(texts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_fill_buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      _fill_buffer()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_get_dataloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      _get_dataloader()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      next_batch()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-and-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Lifecycle and Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -443,9 +660,87 @@
 
 
 
-  <h1>Introduction to the project</h1>
+  <h1>Activation Store</h1>
 
-
+<blockquote>
+<p><strong>Note</strong>: The code implemented in this section is based on the implementation 
+available <a href="https://github.com/bartbussmann/BatchTopK">here</a>. 
+For this project, I have only modified it to adapt it to the <code>SentenceBERT</code> model. </p>
+</blockquote>
+<p>The <code>ActivationsStoreSBERT</code> class is a utility for efficiently extracting 
+and buffering dense <code>Sentence-BERT</code> embeddings from a streaming dataset. 
+It is used as an intermediate component between a sentence encoder and a 
+sparse autoencoder.</p>
+<h2 id="purpose">🧠 Purpose</h2>
+<p>Its main goal is to:
+- Stream examples from a large dataset.
+- Encode them using a Sentence-BERT model.
+- Buffer multiple batches of embeddings into memory.
+- Serve these embeddings as mini-batches for training or analysis.</p>
+<p>This is particularly useful when working with large-scale streaming datasets 
+(e.g. Hugging Face <code>load_dataset(..., streaming=True)</code>) that do not fit in memory.</p>
+<h2 id="configuration-parameters">⚙️ Configuration Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model</code></td>
+<td>A Sentence-BERT model with <code>.encode()</code> method (e.g. from <code>sentence-transformers</code>).</td>
+</tr>
+<tr>
+<td><code>cfg</code></td>
+<td>A dictionary containing the following keys:</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td>Path to the Hugging Face dataset to load.</td>
+</tr>
+<tr>
+<td><code>model_batch_size</code></td>
+<td>Number of examples processed at once by the SBERT model.</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cuda"</code> or <code>"cpu"</code> device for embedding extraction.</td>
+</tr>
+<tr>
+<td><code>num_batches_in_buffer</code></td>
+<td>Number of batches to pre-load and concatenate into an activation buffer.</td>
+</tr>
+<tr>
+<td><code>num_examples</code></td>
+<td>Total number of examples to extract. Acts as a cap to avoid exhausting memory.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="main-methods">🧪 Main Methods</h2>
+<h3 id="get_batch_tokens"><code>get_batch_tokens()</code></h3>
+<p>Streams a batch of raw text examples from the dataset.<br />
+Raises an error if the dataset is exhausted or the example cap is reached.</p>
+<hr />
+<h3 id="get_activationstexts"><code>get_activations(texts)</code></h3>
+<p>Encodes a list of texts into dense embeddings using the SBERT model.</p>
+<hr />
+<h3 id="_fill_buffer"><code>_fill_buffer()</code></h3>
+<p>Fills an internal activation buffer with multiple batches of embeddings.<br />
+This is used to simulate an in-memory dataset for later sampling.</p>
+<hr />
+<h3 id="_get_dataloader"><code>_get_dataloader()</code></h3>
+<p>Creates a PyTorch <code>DataLoader</code> over the activation buffer for minibatch training or analysis.</p>
+<hr />
+<h3 id="next_batch"><code>next_batch()</code></h3>
+<p>Returns the next minibatch of SBERT embeddings. If the internal buffer is exhausted, it is automatically refreshed by re-encoding new examples.</p>
+<hr />
+<h2 id="lifecycle-and-usage">🔁 Lifecycle and Usage</h2>
+<p>Typical usage pattern:
+```python
+store = ActivationsStoreSBERT(model=sbert, cfg=config)
+batch = store.next_batch()  # returns a tensor of SBERT embeddings</p>
 
 
 

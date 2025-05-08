@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../activationstore/">
       
       
-        <link rel="next" href="../saes/">
+        <link rel="next" href="../interpretability/keywords/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Introduction to the project - SAEs for Sentence-BERT</title>
+        <title>Training - SAEs for Sentence-BERT</title>
       
     
     
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sae-training-script" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction to the project
+              Training
             
           </span>
         </div>
@@ -206,17 +211,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
@@ -227,7 +225,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -280,10 +277,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../training/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -294,6 +313,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-get_experiment_cfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuration: get_experiment_cfg()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sae-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 SAE Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-loading-activationsstoresbert" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Data Loading: ActivationsStoreSBERT
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -428,6 +503,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-get_experiment_cfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuration: get_experiment_cfg()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sae-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 SAE Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-loading-activationsstoresbert" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Data Loading: ActivationsStoreSBERT
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -443,9 +564,99 @@
 
 
 
-  <h1>Introduction to the project</h1>
-
-
+<h1 id="sae-training-script">🔧 SAE Training Script</h1>
+<p>This script defines the training pipeline for various Sparse Autoencoder (SAE) architectures over Sentence-BERT embeddings. It allows configuration of the SAE variant, dataset, training parameters, and model behavior.</p>
+<hr />
+<h2 id="overview">📦 Overview</h2>
+<p>The script performs the following steps:</p>
+<ol>
+<li>Load a pre-trained Sentence-BERT model.</li>
+<li>Stream text data from a dataset.</li>
+<li>Encode the texts into dense embeddings.</li>
+<li>Train a selected SAE variant on these embeddings.</li>
+</ol>
+<hr />
+<h2 id="configuration-get_experiment_cfg">⚙️ Configuration: <code>get_experiment_cfg()</code></h2>
+<p>The function <code>get_experiment_cfg()</code> sets up the experiment configuration. 
+It returns a dictionary (<code>cfg</code>) with training hyperparameters and system settings:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sae_type</code></td>
+<td>SAE variant to use (<code>vanilla</code>, <code>topk</code>, <code>batchtopk</code>, <code>jumprelu</code>)</td>
+</tr>
+<tr>
+<td><code>model_name</code></td>
+<td>Pre-trained SBERT model name (Hugging Face)</td>
+</tr>
+<tr>
+<td><code>dataset_path</code></td>
+<td>Hugging Face dataset path (streamed)</td>
+</tr>
+<tr>
+<td><code>dict_size</code></td>
+<td>Number of latent features (SAE output dimensionality)</td>
+</tr>
+<tr>
+<td><code>top_k</code></td>
+<td>Number of active features allowed in the SAE output</td>
+</tr>
+<tr>
+<td><code>lr</code></td>
+<td>Learning rate</td>
+</tr>
+<tr>
+<td><code>aux_penalty</code></td>
+<td>Auxiliary penalty (e.g., JumpReLU regularization)</td>
+</tr>
+<tr>
+<td><code>input_unit_norm</code></td>
+<td>Whether to normalize input embeddings</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td><code>"cuda"</code> or <code>"cpu"</code></td>
+</tr>
+<tr>
+<td><code>wandb_project</code></td>
+<td>Project name for Weights &amp; Biases logging</td>
+</tr>
+</tbody>
+</table>
+<p>The config is finalized by <code>post_init_cfg(cfg)</code>, which fills in 
+derived or default values.</p>
+<hr />
+<h2 id="sae-selection">🧠 SAE Selection</h2>
+<p>The script dynamically selects the appropriate SAE class:</p>
+<pre><code class="language-python">sae_classes = {
+    &quot;vanilla&quot;: VanillaSAE,
+    &quot;topk&quot;: TopKSAE,
+    &quot;batchtopk&quot;: BatchTopKSAE,
+    &quot;jumprelu&quot;: JumpReLUSAE,
+}
+sae = sae_classes[cfg[&quot;sae_type&quot;]](cfg)
+</code></pre>
+<p>Each SAE receives the same configuration dictionary.</p>
+<h2 id="data-loading-activationsstoresbert">📊 Data Loading: <code>ActivationsStoreSBERT</code></h2>
+<p>The class <code>ActivationsStoreSBERT</code> is responsible for efficiently streaming and 
+buffering text data as Sentence-BERT embeddings.</p>
+<p>It performs the following tasks:</p>
+<ul>
+<li><strong>Streams raw text</strong> from a Hugging Face dataset using <code>streaming=True</code>.</li>
+<li><strong>Encodes text batches</strong> using a pre-trained Sentence-BERT model.</li>
+<li><strong>Buffers multiple batches</strong> into memory to simulate a fixed-size dataset.</li>
+<li><strong>Provides minibatches</strong> of embeddings for training or analysis.</li>
+</ul>
+<pre><code class="language-python">activation_store = ActivationsStoreSBERT(model, cfg)
+</code></pre>
+<p>This design enables large-scale training without loading the entire dataset into memory.
+It also handles iteration limits and buffer regeneration automatically.</p>
 
 
 

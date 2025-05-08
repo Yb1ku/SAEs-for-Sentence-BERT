@@ -12,7 +12,7 @@
         <link rel="prev" href="../introduction/">
       
       
-        <link rel="next" href="../interpretability/keywords/">
+        <link rel="next" href="../activationstore/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -260,6 +260,50 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../activationstore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Activation Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -269,10 +313,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -285,8 +329,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Feature analysis
           </label>
@@ -401,7 +445,19 @@
 
   <h1>SAE models</h1>
 
-
+<blockquote>
+<p><strong>Note</strong> 
+The SAE models used in this project were not developed from scratch by me. 
+They are extracted from an existing implementation available at: 
+<a href="https://github.com/bartbussmann/BatchTopK">https://github.com/bartbussmann/BatchTopK</a>. 
+The focus of this project is not the implementation and training of the SAEs, but the developement 
+of a method for interpreting the features obtained from them. </p>
+</blockquote>
+<p>There are a total of 4 different SAE implementations: 
+- <code>VanillaSAE</code>: Original SAE implementation. 
+- <code>JumpReLU</code>: SAE with <code>JumpReLU</code> activation function. 
+- <code>BatchTopK</code>: SAE with <code>BatchTopK</code> activation function. 
+- <code>BatchTopKJumpReLU</code>: SAE with <code>BatchTopK</code> for training and <code>JumpReLU</code> for inference. </p>
 
 
 
