@@ -33,12 +33,16 @@ class Explainer:
 
     def _load_dataset(self, streaming=True):
         """
-        Load the dataset from the specified path.
+        Load the dataset from the specified path and filter invalid examples.
         """
         if streaming:
-            return load_dataset(self.cfg["dataset_path"], split="train", streaming=True)
+            dataset = load_dataset(self.cfg["dataset_path"], split="train", streaming=True)
         else:
-            return load_dataset(self.cfg["dataset_path"], split="train")
+            dataset = load_dataset(self.cfg["dataset_path"], split="train")
+
+        filtered_dataset = [example for example in dataset if
+                            self.column in example and example[self.column] is not None]
+        return filtered_dataset
 
     def load_sae(self):
         """
@@ -94,7 +98,8 @@ class Explainer:
         device = self.sae.cfg["device"]
         dict_size = self.sae.cfg["dict_size"]
 
-        dataset = self._load_dataset(streaming=True)
+        # Cargar y filtrar el conjunto de datos
+        dataset = self._load_dataset(streaming=False)
         dataloader = DataLoader(dataset, batch_size=64, shuffle=False)
 
         if save_path is None:
@@ -111,6 +116,9 @@ class Explainer:
                 break
 
             texts = batch[column]
+            if any(text is None for text in texts):
+                continue
+
             embeddings = self.model.encode(texts, convert_to_tensor=True, device=device)
 
             with torch.no_grad():
@@ -124,7 +132,7 @@ class Explainer:
             if processed % 20000 == 0:
                 print(f"[INFO] {processed} examples processed.")
 
-            wait_for_gpu_cooldown(threshold=73, cooldown=60)
+            wait_for_gpu_cooldown(threshold=75, cooldown=60)
 
         feature_fire_rate = 100 * feature_count / processed
         fire_rate_np = feature_fire_rate.cpu().numpy()

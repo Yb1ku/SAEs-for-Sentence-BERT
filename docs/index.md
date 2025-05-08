@@ -17,7 +17,7 @@ from config import get_default_cfg
 from explainer import Explainer
 
 cfg = get_default_cfg()
-cfg["artifact_path"] = 'ybiku-unir/SBERT-SAEs-csLG/sentence-transformers_paraphrase-mpnet-base-v2_blocks.0.hook_embed_2304_jumprelu_16_0.0003_389:v2'
+cfg["artifact_path"] = 'your_artifact_path' # Path to the artifact in wandb 
 
 explainer = Explainer(cfg)
 sae = explainer.load_sae()
@@ -27,7 +27,7 @@ The following snippet shows how to analyze the features obtained from the Sparse
 compute the fire rate of each feature, get the top activating texts for each feature and extract the 
 keywords which describe them. 
 ```python 
-fire_rate = explainer.compute_fire_rate(column="text", save_path="fire_rate_test.npy")
+fire_rate = explainer.compute_fire_rate(column="text", save_path="fire_rate.npy")
 top_activations = explainer.get_top_activating_texts(
     num_examples = 100,
     top_k = 2,
@@ -68,7 +68,7 @@ feature, and `text` is the text itself. For example, a possible output of `top_a
 
 `keywords` has a similar structure. It is also a dictionary, each key corresponding to a feature. 
 Inside each key, there is a list of tuples of the form `[(keyword), score]`. `keyword` is the keyword itself, 
-and `score` is the score of the keyword. For example, a possible output of `keywords' could be: 
+and `score` is the score of the keyword. For example, a possible output of `keywords` could be: 
 ```bash 
 {'feature_id': 2220,
  'keywords': [['reinforcement', 1.620540681324779],

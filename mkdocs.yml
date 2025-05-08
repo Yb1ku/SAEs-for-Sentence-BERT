@@ -1,0 +1,12 @@
+site_name: SAEs for Sentence-BERT
+theme:
+  name: material
+
+nav:
+  - Quick start: index.md
+  - Introduction to the project: introduction.md
+  - SAE models: saes.md
+  - Feature analysis:
+      - Keyword extraction: interpretability/keywords.md
+      - Visualization: interpretability/visualization.md
+  - Results: results.md
