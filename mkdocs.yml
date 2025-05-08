@@ -1,6 +1,7 @@
 site_name: SAEs for Sentence-BERT
 theme:
   name: material
+  logo: assets/logo.png
 
 nav:
   - Quick start: index.md
