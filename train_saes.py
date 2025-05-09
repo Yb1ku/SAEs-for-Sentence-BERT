@@ -1,3 +1,9 @@
+# Adapted from: https://github.com/bartbussmann/BatchTopK
+# Original author: Bart Bussmann
+# License: MIT
+#
+# Modifications made by: Yb1ku, 2025
+
 import torch
 from training import train_sae
 from sae import VanillaSAE, TopKSAE, BatchTopKSAE, JumpReLUSAE

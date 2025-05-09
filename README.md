@@ -48,6 +48,14 @@ based on keyword extraction via `KeyBERT`.
 Master's student at UNIR   
 📧 diegomarcosquiros(at)gmail(dot)com  
 🔗 https://www.linkedin.com/in/diego-marcos-quirós-803117290/
+---
+## 🔗 Acknowledgements
+
+This project includes adapted components from the [BatchTopK](https://github.com/bartbussmann/BatchTopK) 
+repository by Bart Bussmann, which is licensed under the MIT License.
+
+The original code has been modified to fit the objectives and design of this project.  
+[View original license on GitHub](https://github.com/Yb1ku/SAEs-for-Sentence-BERT/blob/main/third_party/batchtopk/LICENSE)
 
 
 
