@@ -48,18 +48,6 @@ based on keyword extraction via `KeyBERT`.
 Master's student at UNIR   
 📧 diegomarcosquiros(at)gmail(dot)com  
 🔗 https://www.linkedin.com/in/diego-marcos-quirós-803117290/
----
-## 🔗 Acknowledgements
-
-This project builds upon the implementation of BatchTopK Sparse Autoencoders developed by Bart Bussmann et al., available at:
-
-- [https://github.com/bartbussmann/BatchTopK](https://github.com/bartbussmann/BatchTopK)
-
-Their repository is licensed under the MIT License.  
-Parts of the model code have been adapted and extended for integration with the interpretability 
-pipeline in this project.
-
-Full credit goes to the original authors.
 
 
 
