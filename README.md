@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/logo.png" alt="Project Logo" width="300"/>
+</p>
+
 > ⚠️**WARNING** <br>
 > This repository is a work in progress and is not yet complete. The code may not be fully functional or tested.
 > The repository structure may not be accurate. 

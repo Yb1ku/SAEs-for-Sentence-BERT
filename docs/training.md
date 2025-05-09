@@ -57,7 +57,7 @@ Each SAE receives the same configuration dictionary.
 ## 📊 Data Loading: `ActivationsStoreSBERT`
 
 The class `ActivationsStoreSBERT` is responsible for efficiently streaming and 
-buffering text data as Sentence-BERT embeddings.
+buffering text data as `Sentence-BERT` embeddings.
 
 It performs the following tasks:
 

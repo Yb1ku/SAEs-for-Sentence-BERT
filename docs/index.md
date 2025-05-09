@@ -1,7 +1,8 @@
 > ⚠️**WARNING** <br>
 > This page is still under construction. 
 
-This codebase exists to provide a simple environment for : 
+This codebase exists to provide a simple environment for:
+
 - Training Sparse Autoencoders (SAEs) on Sentence-BERT embeddings. 
 - Analyzing the features obtained from the SAEs. 
 
