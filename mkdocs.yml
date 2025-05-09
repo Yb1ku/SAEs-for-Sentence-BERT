@@ -13,3 +13,4 @@ nav:
       - Keyword extraction: interpretability/keywords.md
       - Visualization: interpretability/visualization.md
   - Results: results.md
+  - References: references.md
