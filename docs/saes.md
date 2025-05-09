@@ -6,7 +6,8 @@
 > of a method for interpreting the features obtained from them. 
 
 
-There are a total of 4 different SAE implementations: 
+There are a total of four different SAE implementations: 
+
 - `VanillaSAE`: Original SAE implementation. 
 - `JumpReLU`: SAE with `JumpReLU` activation function. 
 - `BatchTopK`: SAE with `BatchTopK` activation function. 
