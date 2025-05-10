@@ -9,8 +9,8 @@ nav:
   - SAE models: saes.md
   - Activation Store: activationstore.md
   - Training: training.md
-  - Feature analysis:
-      - Keyword extraction: interpretability/keywords.md
-      - Visualization: interpretability/visualization.md
+  - Tutorials:
+      - How to use SAEs: tutorials/tutorial_use.md
+      - Keyword extraction: tutorials/keywords.md
   - Results: results.md
   - References: references.md
