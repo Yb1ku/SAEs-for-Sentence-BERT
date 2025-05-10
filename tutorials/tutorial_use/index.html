@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../keywords/">
+        <link rel="prev" href="../../training/">
       
       
-        <link rel="next" href="../../results/">
+        <link rel="next" href="../keywords/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Visualization - SAEs for Sentence-BERT</title>
+        <title>How to use SAEs - SAEs for Sentence-BERT</title>
       
     
     
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#how-to-use-a-sae-for-analyzing-a-dataset" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Visualization
+              How to use SAEs
             
           </span>
         </div>
@@ -315,7 +320,7 @@
   
   
   <span class="md-ellipsis">
-    Feature analysis
+    Tutorials
     
   </span>
   
@@ -326,9 +331,110 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Feature analysis
+            Tutorials
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    How to use SAEs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to use SAEs
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#load-the-sae-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      📲 Load the SAE artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-the-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Load the dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-feature-density-histogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Get feature density histogram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-top-10-activating-texts" class="md-nav__link">
+    <span class="md-ellipsis">
+      📑 Get the top-10 activating texts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
             
               
                 
@@ -348,37 +454,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Visualization
-    
-  </span>
-  
-
-      </a>
-      
     </li>
   
 
@@ -452,6 +527,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#load-the-sae-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      📲 Load the SAE artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-the-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Load the dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-feature-density-histogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Get feature density histogram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-top-10-activating-texts" class="md-nav__link">
+    <span class="md-ellipsis">
+      📑 Get the top-10 activating texts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -467,9 +588,157 @@
 
 
 
-  <h1>Visualization</h1>
+<h1 id="how-to-use-a-sae-for-analyzing-a-dataset">How to use a SAE for analyzing a dataset</h1>
+<p>Once you have trained a SAE and saved it as an artifact in your Weights &amp; Biases project, 
+you can use it to analyze a dataset. This section will guide you through the process. </p>
+<h2 id="load-the-sae-artifact">📲 Load the SAE artifact</h2>
+<p>First, import the necessary libraries and load the SAE artifact.</p>
+<pre><code class="language-python">from sentence_transformers import SentenceTransformer
+from transformers import pipeline
+from config import get_default_cfg
+from sae import JumpReLUSAE
+import wandb
+import os
+import json
+import torch
+import numpy as np 
+
+sbert = SentenceTransformer('sentence-transformers/paraphrase-mpnet-base-v2')
+distilbert = pipeline(&quot;fill-mask&quot;, model=&quot;distilbert/distilbert-base-cased&quot;)
+cfg = get_default_cfg()
+
+run = wandb.init()
+artifact = run.use_artifact('ybiku-unir/SBERT-SAEs-csLG/sentence-transformers_paraphrase-mpnet-base-v2_blocks.0.hook_embed_2304_jumprelu_16_0.0003_389:v0', type='model')
+artifact_dir = artifact.download()
+config_path = os.path.join(artifact_dir, 'config.json')
+with open(config_path, 'r') as f:
+    config = json.load(f)
+
+if &quot;dtype&quot; in config and isinstance(config[&quot;dtype&quot;], str):
+    if config[&quot;dtype&quot;] == &quot;torch.float32&quot;:
+        config[&quot;dtype&quot;] = torch.float32
+    elif config[&quot;dtype&quot;] == &quot;torch.float16&quot;:
+        config[&quot;dtype&quot;] = torch.float16
+
+sae = JumpReLUSAE(config).to(config[&quot;device&quot;])
+sae.load_state_dict(torch.load(os.path.join(artifact_dir, 'sae.pt')))
+</code></pre>
+<p>The script above will use the configuration stored in the artifact to load the model. This way, you will
+not need to worry about defining the model architecture again. </p>
+<h2 id="load-the-dataset">📊 Load the dataset</h2>
+<p>Next, you need to create the dataset you want to analyze. It needs to be a custom class 
+which inherits from the <code>IterableDataset</code> class. The following snippet shows an example 
+of how to do it: </p>
+<pre><code class="language-python">from torch.utils.data import DataLoader, IterableDataset
+from datasets import load_dataset
+
+class HFDatasetWrapper(IterableDataset):
+    def __init__(self, hf_dataset):
+        self.hf_dataset = hf_dataset
+
+    def __iter__(self):
+        for item in self.hf_dataset:
+            if item is not None and item.get(&quot;text&quot;):
+                yield item
+
+def collate_fn_skip_none(batch):
+    return [item for item in batch if item is not None]
+
+hf_dataset = load_dataset(&quot;UniverseTBD/arxiv-astro-abstracts-all&quot;, split=&quot;train&quot;, streaming=True)
+dataset = HFDatasetWrapper(hf_dataset)
+
+num_examples = config[&quot;num_examples&quot;]
+device = config[&quot;device&quot;]
+dict_size = config[&quot;dict_size&quot;]
+
+sbert = sbert.to(device)
+sae = sae.to(device)
+sae.eval()
+
+dataloader = DataLoader(dataset, batch_size=64, collate_fn=collate_fn_skip_none)
+</code></pre>
+<p>With this code, you are now ready to analyze the dataset. </p>
+<h2 id="get-feature-density-histogram">🔍 Get feature density histogram</h2>
+<p>One of the indicators of whether the SAE has a good sparsity is the feature density
+histogram. To get the feature activations, you can run the following snippet: </p>
+<pre><code class="language-python">feature_count = torch.zeros(dict_size, device=device)
+processed = 0
+
+for batch in dataloader:
+    if processed &gt;= num_examples:
+        break
+
+    texts = [item[&quot;text&quot;] for item in batch]
+    embeddings = sbert.encode(texts, convert_to_tensor=True, device=device)
+
+    with torch.no_grad():
+        sae_out = sae(embeddings)
+
+    feature_acts = sae_out[&quot;feature_acts&quot;]
+    batch_count = (feature_acts &gt; 0).float().sum(dim=0)
+    feature_count += batch_count
+    processed += len(texts)
+
+    if processed % 20000 == 0:
+        print(f&quot;[INFO] {processed} examples processed.&quot;)
+
+    temp = get_gpu_temperature()
+    if temp is not None and temp &gt;= 74:
+        wait_for_gpu_cooling(threshold=74, resume_temp=60, check_interval=10)
+
+feature_fire_rate = 100 * feature_count / num_examples
+np.save(&quot;fire_rate_astro.npy&quot;, feature_fire_rate.cpu().numpy())
+</code></pre>
+<p>the <code>.npy</code> file will contain the number of times each feature was activated. If you 
+want to plot the histogram, you can use the following code: </p>
+<pre><code class="language-python">import matplotlib.pyplot as plt 
+log_feature_fire_rate = torch.log10((feature_fire_rate / 100) + 1e-10).cpu().numpy()
+
+plt.style.use('default')
+plt.hist(log_feature_fire_rate, bins=50, color='tab:blue')
+plt.xlabel(&quot;Log10 Feature density&quot;)
+plt.ylabel(&quot;Number of features&quot;)
+plt.title(&quot;Log Feature Fire Rate Distribution (csLG)&quot;)
+plt.xlim(-10, 0)
+plt.show()
+</code></pre>
+<p>Features with a 0% fire rate will be placed in the -10 value in the x-axis, and 
+features with a 100% fire rate will be placed in the 0 value. For further details on 
+how to interpret the histogram, I highly recommend reading 
+<a href="https://www.alignmentforum.org/posts/f9EgfLSurAiqRJySD/open-source-sparse-autoencoders-for-all-residual-stream">this post</a>. </p>
+<h2 id="get-the-top-10-activating-texts">📑 Get the top-10 activating texts</h2>
+<p>To generate the descriptions for the features, first you need to get examples of the 
+texts which most activated each feature. You can do this by running the following code: </p>
+<pre><code class="language-python">import heapq
+
+num_features = config[&quot;dict_size&quot;]
+top_activations = [[] for _ in range(num_features)]
+
+for i, example in enumerate(dataset):
+    if i &gt;= num_examples: break
+    text = example[&quot;abstr&quot;]
+    embedding = sbert.encode(text, convert_to_tensor=True).squeeze(0).to(config[&quot;device&quot;])
+    with torch.no_grad():
+        sae_out = sae(embedding)
+    feature_acts = sae_out[&quot;feature_acts&quot;]
+
+    for j in range(num_features):
+        activation_value = feature_acts[j].item()
+        heap = top_activations[j]
+        if len(heap) &lt; 10: # Change this to the number of examples you want 
+            heapq.heappush(heap, (activation_value, text))
+        else:
+            heapq.heappushpop(heap, (activation_value, text))
+
+    if i % 5000 == 0:
+        print(f&quot;Processed {i} examples&quot;)
 
 
+top_activations = [sorted(heap, key=lambda x: x[0], reverse=True) for heap in top_activations]
+with open(&quot;top_activations_astro.json&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+    json.dump(top_activations, f, indent=2, ensure_ascii=False)
+</code></pre>
+<p>Once you have the top-k activating texts, you are now redy to generate the descriptions. </p>
 
 
 
