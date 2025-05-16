@@ -55,7 +55,7 @@ This project includes adapted components from the [BatchTopK](https://github.com
 repository by Bart Bussmann, which is licensed under the MIT License.
 
 The original code has been modified to fit the objectives and design of this project.  
-[View original license on GitHub](https://github.com/Yb1ku/SAEs-for-Sentence-BERT/blob/main/third_party/batchtopk/LICENSE)
+[View original license on GitHub](https://github.com/bartbussmann/BatchTopK/blob/main/LICENSE)
 
 
 
