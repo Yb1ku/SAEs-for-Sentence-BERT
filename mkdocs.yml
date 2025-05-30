@@ -3,8 +3,8 @@ theme:
   name: material
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: red
+      accent: lime
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
