@@ -11,13 +11,19 @@
 > ⚠️**WARNING** <br>
 > This page is still under construction. 
 
+This is the result of a Master's Thesis project which aims to develop a method for interpreting features 
+in Sparse Autoencoders (SAEs) trained on Sentence-BERT embeddings. It is developed 100% in Python, using 
+PyTorch as the main framework for the implementation of the SAEs. The project is based on the BatchTopK 
+repository by Bart Bussmann, which provides a foundation for the implementation of the SAEs. Click
+[here](https://github.com/bartbussmann/BatchTopK) to access the original repository. 
+
 This codebase exists to provide a simple environment for:
 
 - Training Sparse Autoencoders (SAEs) on Sentence-BERT embeddings. 
 - Analyzing the features obtained from the SAEs. 
 - Present a method for interpreting mono-semantic features in SAEs using keyword extraction via KeyBERT. 
 
-First you need to install the requirements: 
+First, you'll need to install the requirements: 
 ```bash 
 pip install -r requirements.txt 
 ```
