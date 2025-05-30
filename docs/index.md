@@ -1,3 +1,9 @@
+<figure style="text-align: center;" markdown>
+  <img src="assets/logo.png" alt="Project logo" width="300"/>
+  <figcaption>Extracting mono-semantic features from Sentence-BERT</figcaption>
+</figure>
+
+
 > ⚠️**WARNING** <br>
 > This page is still under construction. 
 
@@ -7,9 +13,7 @@ This codebase exists to provide a simple environment for:
 - Analyzing the features obtained from the SAEs. 
 - Present a method for interpreting mono-semantic features in SAEs using keyword extraction via KeyBERT. 
 
-
-## QUICK START 
-Install the requirements: 
+First you need to install the requirements: 
 ```bash 
 pip install -r requirements.txt 
 ```
@@ -46,6 +50,6 @@ sae.load_state_dict(torch.load(os.path.join(artifact_dir, 'sae.pt')))
 ```
 Once the model is loaded, you can use it to obtain the features from a specific text. 
 
-
+## Structure of the documentation
 
 
