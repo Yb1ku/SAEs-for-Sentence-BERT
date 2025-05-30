@@ -1,6 +1,10 @@
+# <!-- intentionally left blank -->
+
 <figure style="text-align: center;" markdown>
-  <img src="assets/logo.png" alt="Project logo" width="300"/>
-  <figcaption>Extracting mono-semantic features from Sentence-BERT</figcaption>
+  <img src="assets/logo.png" alt="Logo" width="300"/>
+  <figcaption style="margin-top: 0.5em; font-style: italic;">
+    Extracting mono-semantic features from Sentence-BERT
+  </figcaption>
 </figure>
 
 
