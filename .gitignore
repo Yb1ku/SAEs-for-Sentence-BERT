@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+site/
+
+wandb/
+
+not_in_repo/
