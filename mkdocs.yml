@@ -3,14 +3,14 @@ theme:
   name: material
   palette:
     - scheme: default
-      primary: red
-      accent: lime
+      primary: teal
+      accent: orange
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: deep orange
+      primary: deep purple
+      accent: lime
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
