@@ -5,6 +5,8 @@ This codebase exists to provide a simple environment for:
 
 - Training Sparse Autoencoders (SAEs) on Sentence-BERT embeddings. 
 - Analyzing the features obtained from the SAEs. 
+- Present a method for interpreting mono-semantic features in SAEs using keyword extraction via KeyBERT. 
+
 
 ## QUICK START 
 Install the requirements: 

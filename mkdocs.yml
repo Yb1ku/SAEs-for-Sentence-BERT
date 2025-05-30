@@ -1,6 +1,15 @@
 site_name: SAEs for Sentence-BERT
 theme:
   name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep orange
   logo: assets/logo.png
 
 nav:
