@@ -1,0 +1,15 @@
+numpy
+matplotlib
+datasets
+transformers
+torch
+transformer_lens
+pynvml
+sentence_transformers
+seaborn
+openai
+huggingface_hub
+shap
+keybert
+nltk
+umap-learn
