@@ -65,7 +65,7 @@ The documentation is organized as follows:
 - **SAE models**: Overview of the different Sparse Autoencoder architectures used (Vanilla, TopK, JumpReLU).
 - **Activation Store**: Details of the component responsible for extracting and buffering SBERT embeddings.
 - **Training**: Description of the training pipeline and configuration options for SAE models.
-- **TUtorials**: Practical examples and notebooks demonstrating how to use the codebase. 
+- **Tutorials**: Practical examples and notebooks demonstrating how to use the codebase. 
 - **Results**: Analysis of the features obtained from the SAEs and their interpretation. 
 ---
 
