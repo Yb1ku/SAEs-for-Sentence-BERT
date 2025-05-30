@@ -1,9 +1,0 @@
-{"time":"2025-05-11T19:04:40.6062529+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"D:\\Escritorio\\PythonProyects\\SparseAutoencodersTFM\\wandb\\run-20250511_190440-ue3g9zii\\logs\\debug-core.log"}
-{"time":"2025-05-11T19:04:40.7156268+02:00","level":"INFO","msg":"created new stream","id":"ue3g9zii"}
-{"time":"2025-05-11T19:04:40.7156268+02:00","level":"INFO","msg":"stream: started","id":"ue3g9zii"}
-{"time":"2025-05-11T19:04:40.7156268+02:00","level":"INFO","msg":"handler: started","stream_id":"ue3g9zii"}
-{"time":"2025-05-11T19:04:40.7156268+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"ue3g9zii"}
-{"time":"2025-05-11T19:04:40.7156268+02:00","level":"INFO","msg":"sender: started","stream_id":"ue3g9zii"}
-{"time":"2025-05-11T19:04:40.9841878+02:00","level":"INFO","msg":"Starting system monitor"}
-{"time":"2025-05-11T19:04:41.9876127+02:00","level":"WARN","msg":"sender: sendUseArtifact: job builder disabled, skipping"}
-{"time":"2025-05-11T19:04:42.7214555+02:00","level":"INFO","msg":"Pausing system monitor"}

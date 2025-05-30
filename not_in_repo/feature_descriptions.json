@@ -1,8 +1,0 @@
-{
-  "role": "assistant",
-  "content": " Recognizing and activating for discussions of chronic pain.",
-  "tool_calls": [],
-  "refusal": null,
-  "audio": null,
-  "function_call": null
-}
