@@ -1,7 +1,7 @@
 # <!-- intentionally left blank -->
 
 <figure style="text-align: center;" markdown>
-  <img src="assets/logo.png" alt="Logo" width="300"/>
+  <img src="assets/banner.png" alt="Logo" width="500"/>
   <figcaption style="margin-top: 0.5em; font-style: italic;">
     Extracting mono-semantic features from Sentence-BERT
   </figcaption>
