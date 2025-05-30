@@ -65,14 +65,13 @@ The documentation is organized as follows:
 - **SAE models**: Overview of the different Sparse Autoencoder architectures used (Vanilla, TopK, JumpReLU).
 - **Activation Store**: Details of the component responsible for extracting and buffering SBERT embeddings.
 - **Training**: Description of the training pipeline and configuration options for SAE models.
-- **Feature analysis**:
-  - **Keyword extraction**: Methods to extract representative words for each latent feature.
-  - **Visualization**: Techniques to explore the feature space, activation patterns, and semantic alignment.
-- **Results**: Qualitative and quantitative insights from experiments across different datasets and architectures.
-
+- **TUtorials**: Practical examples and notebooks demonstrating how to use the codebase. 
+- **Results**: Analysis of the features obtained from the SAEs and their interpretation. 
 ---
 
-This documentation is intended to be modular and accessible. Each section can be read independently depending on your interest—whether you're focused on model training, interpretability methods, or practical application.
+This documentation is intended to be modular and accessible. Each section can be read independently 
+depending on your interest—whether you're focused on model training, interpretability methods, or 
+practical application.
 
 
 
