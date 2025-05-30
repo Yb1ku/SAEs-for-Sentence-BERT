@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quick-start" class="md-skip">
+        <a href="#load-a-sparse-autoencoder" class="md-skip">
           Skip to content
         </a>
       
@@ -272,16 +272,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      QUICK START
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="QUICK START">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#load-a-sparse-autoencoder" class="md-nav__link">
     <span class="md-ellipsis">
       Load a Sparse Autoencoder
@@ -289,9 +279,13 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-the-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of the documentation
+    </span>
+  </a>
   
 </li>
       
@@ -574,16 +568,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      QUICK START
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="QUICK START">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#load-a-sparse-autoencoder" class="md-nav__link">
     <span class="md-ellipsis">
       Load a Sparse Autoencoder
@@ -591,9 +575,13 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-the-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of the documentation
+    </span>
+  </a>
   
 </li>
       
@@ -615,6 +603,11 @@
 
   <h1>Quick start</h1>
 
+<figure style="text-align: center;" markdown>
+  <img src="assets/logo.png" alt="Project logo" width="300"/>
+  <figcaption>Extracting mono-semantic features from Sentence-BERT</figcaption>
+</figure>
+
 <blockquote>
 <p>⚠️<strong>WARNING</strong> <br>
 This page is still under construction. </p>
@@ -625,8 +618,7 @@ This page is still under construction. </p>
 <li>Analyzing the features obtained from the SAEs. </li>
 <li>Present a method for interpreting mono-semantic features in SAEs using keyword extraction via KeyBERT. </li>
 </ul>
-<h2 id="quick-start">QUICK START</h2>
-<p>Install the requirements: </p>
+<p>First you need to install the requirements: </p>
 <pre><code class="language-bash">pip install -r requirements.txt 
 </code></pre>
 <h3 id="load-a-sparse-autoencoder">Load a Sparse Autoencoder</h3>
@@ -660,6 +652,7 @@ sae = JumpReLUSAE(config).to(config[&quot;device&quot;])
 sae.load_state_dict(torch.load(os.path.join(artifact_dir, 'sae.pt')))
 </code></pre>
 <p>Once the model is loaded, you can use it to obtain the features from a specific text. </p>
+<h2 id="structure-of-the-documentation">Structure of the documentation</h2>
 
 
 
