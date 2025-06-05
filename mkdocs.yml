@@ -25,6 +25,5 @@ nav:
   - Tutorials:
       - How to use SAEs: tutorials/tutorial_use.md
       - Keyword extraction: tutorials/keywords.md
-      - Feature analysis: tutorials/feature_analysis.md
   - Results: results.md
   - References: references.md

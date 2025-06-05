@@ -13,6 +13,12 @@ The script performs the following steps:
 3. Encode the texts into dense embeddings.
 4. Train a selected SAE variant on these embeddings.
 
+The following figure shows the diagram of the training pipeline:
+
+<p align="center">
+  <img src="assets/training_setup.png" alt="Training diagram">
+</p>
+
 ---
 
 ## ⚙️ Configuration: `get_experiment_cfg()`

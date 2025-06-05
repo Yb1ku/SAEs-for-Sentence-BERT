@@ -5,8 +5,8 @@ for interpreting the features obtained from a Sparse Autoencoder. The proposed m
 is based on [`KeyBERT`](https://maartengr.github.io/KeyBERT/), a keyword extraction 
 library availiable in Python. The idea is to extract the most relevant words from each 
 top-k activating text, and implement a scoring system to rank the terms. This tutorial 
-will show an example of how to implement this method. For more details on the 
-theoretical background, please refer to [this section]() of the documentation. 
+will show an example of how to implement this method. More details about the 
+theoretical background will be provided soon. 
 
 You can use the following code to get the keywords for each feature. 
 ```python 

@@ -21,7 +21,7 @@ distilbert = pipeline("fill-mask", model="distilbert/distilbert-base-cased")
 cfg = get_default_cfg()
 
 run = wandb.init()
-artifact = run.use_artifact('ybiku-unir/SBERT-SAEs-csLG/sentence-transformers_paraphrase-mpnet-base-v2_blocks.0.hook_embed_2304_jumprelu_16_0.0003_389:v0', type='model')
+artifact = run.use_artifact('path_to_your_wandb_artifact', type='model')
 artifact_dir = artifact.download()
 config_path = os.path.join(artifact_dir, 'config.json')
 with open(config_path, 'r') as f:
