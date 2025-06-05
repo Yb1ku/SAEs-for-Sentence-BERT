@@ -818,10 +818,10 @@ This is used to simulate an in-memory dataset for later sampling.</p>
 <p>Returns the next minibatch of SBERT embeddings. If the internal buffer is exhausted, it is automatically refreshed by re-encoding new examples.</p>
 <hr />
 <h2 id="lifecycle-and-usage">🔁 Lifecycle and Usage</h2>
-<p>Typical usage pattern:
-```python
-store = ActivationsStoreSBERT(model=sbert, cfg=config)
-batch = store.next_batch()  # returns a tensor of SBERT embeddings</p>
+<p>Typical usage pattern:</p>
+<pre><code class="language-python">store = ActivationsStoreSBERT(model=sbert, cfg=config)
+batch = store.next_batch()  # returns a tensor of SBERT embeddings
+</code></pre>
 
 
 
