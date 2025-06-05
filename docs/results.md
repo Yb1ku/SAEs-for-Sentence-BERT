@@ -6,7 +6,7 @@ This section provides an overview of the main results obtained from the project.
 The figure below shows the feature density histograms of both models. 
 
 <p align="center">
-  <img src="assets/histograms.png" alt="Training diagram">
+  <img src="../assets/histograms.png" alt="Feature density histograms" width="600">
 </p>
 
 
