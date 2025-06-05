@@ -6,3 +6,5 @@ site/
 wandb/
 
 not_in_repo/
+
+artifacts/

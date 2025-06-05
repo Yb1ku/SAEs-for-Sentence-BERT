@@ -54,21 +54,6 @@ models or datasets.
 
 ---
 
-## 🧭 Documentation Structure
-
-
-
-The documentation is organized as follows:
-
-- **Quick start**: A minimal guide to set up the environment and run the pipeline.
-- **Introduction to the project**: Motivation, objectives, and context for this research.
-- **SAE models**: Overview of the different Sparse Autoencoder architectures used (Vanilla, TopK, JumpReLU).
-- **Activation Store**: Details of the component responsible for extracting and buffering SBERT embeddings.
-- **Training**: Description of the training pipeline and configuration options for SAE models.
-- **Tutorials**: Practical examples and notebooks demonstrating how to use the codebase. 
-- **Results**: Analysis of the features obtained from the SAEs and their interpretation. 
----
-
 This documentation is intended to be modular and accessible. Each section can be read independently 
 depending on your interest—whether you're focused on model training, interpretability methods, or 
 practical application.
