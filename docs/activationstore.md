@@ -70,3 +70,4 @@ Typical usage pattern:
 ```python
 store = ActivationsStoreSBERT(model=sbert, cfg=config)
 batch = store.next_batch()  # returns a tensor of SBERT embeddings
+```

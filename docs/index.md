@@ -74,8 +74,7 @@ methodology used.
 - **Training**: Provides details on how to train the Sparse Autoencoders. 
 
 - **Tutorials**: 
-  - **How to use SAEs**: Tutorial on how to load a SAE, obtain the feature density histogram and the top-k
-activating texts of each feature. 
+  - **How to use SAEs**: Tutorial on how to load a SAE, obtain the feature density histogram and the top-k activating texts of each feature. 
   - **Keyword extraction**: Tutorial on how to implement the scoring method to interpret the features.
 
 - **Results**: Shows the main results and conclusions of the project. 
