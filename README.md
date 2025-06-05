@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/logo.png" alt="Project Logo" width="300"/>
+  <img src="docs/assets/banner.png" alt="Project Logo" width="300"/>
 </p>
 
 > ⚠️**WARNING** <br>
